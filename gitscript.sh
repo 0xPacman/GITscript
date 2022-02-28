@@ -1,0 +1,45 @@
+echo "   _____ _____ _______    _____  _____ _____  _____ _____ _______ 
+  / ____|_   _|__   __|  / ____|/ ____|  __ \|_   _|  __ \__   __|
+ | |  __  | |    | |    | (___ | |    | |__) | | | | |__) | | |   
+ | | |_ | | |    | |     \___ \| |    |  _  /  | | |  ___/  | |   
+ | |__| |_| |_   | |     ____) | |____| | \ \ _| |_| |      | |   
+  \_____|_____|  |_|    |_____/ \_____|_|  \_\_____|_|      |_|   "
+
+echo "Select the mode: "
+echo "1) Automatic push every N minutes with random commit message"
+echo "2) Normal push with specific commit message"
+echo "3) Push whenever you change something in the code"
+cmsg=$(curl -s http://whatthecommit.com/index.txt)
+read n 
+if [ $n -eq 1 ]; then 
+    echo "Select the files to track: "
+    read files
+    echo "Push every N minutes:"
+    echo -n "N: "
+    read nmin
+    
+    while [ 1 ]
+    do
+	git add $files 
+	git commit -m "$cmsg"
+    git push
+	sleep $$nmin
+    done
+elif [ $n -eq 2 ]; then
+    echo "Select the files to track: "
+    read files
+    while [ 1 ]
+    do
+        echo "Commit message: "
+        read msgcommit
+        git add $files 
+	    git commit -m "$msgcommit"
+        git push
+    done
+elif [ $n -eq 3 ]; then
+    echo "Select the files to track: "
+    read files
+    
+else
+    echo "Error"
+fi
