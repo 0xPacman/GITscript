@@ -6,7 +6,7 @@
 #    By: ahjadani <ahjadani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:09:33 by ahjadani          #+#    #+#              #
-#    Updated: 2022/03/02 19:18:51 by ahjadani         ###   ########.fr        #
+#    Updated: 2022/03/02 20:13:16 by ahjadani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ if [ $n -eq 1 ]; then
     
     while [ 1 ]
     do
-	git add $files 
-	git commit -m "$cmsg"
-    git push
-	sleep $$nmin
+	    git add $files 
+	    git commit -m "$cmsg"
+        git push
+	    sleep $nmin
     done
 elif [ $n -eq 2 ]; then
     echo "Select the files to track: "
