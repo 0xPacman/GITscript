@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    gitscript.sh                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahjadani <ahjadani@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/02 13:09:33 by ahjadani          #+#    #+#              #
+#    Updated: 2022/03/02 19:18:51 by ahjadani         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 echo "   _____ _____ _______    _____  _____ _____  _____ _____ _______ 
   / ____|_   _|__   __|  / ____|/ ____|  __ \|_   _|  __ \__   __|
@@ -40,7 +51,18 @@ elif [ $n -eq 2 ]; then
 elif [ $n -eq 3 ]; then
     echo "Select the files to track: "
     read files
-    
+    ls -la -T $files | awk '{print $8}' > .git_script
+    while [ 1 ]
+    do 
+        ls -la -T $files | awk '{print $8}' > .git_script_2
+        diff .git_script .git_script_2
+        if [ $? -eq 1 ]; then
+            ls -la -T $files | awk '{print $8}' > .git_script
+            git add $files 
+	        git commit -m "$cmsg"
+            git push
+        fi
+    done
 else
     echo "Error"
 fi
