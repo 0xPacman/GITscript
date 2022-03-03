@@ -5,4 +5,8 @@
 
 # GITscript
 
+Usage: 
+
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
+
 "if you want it, GIT it".
