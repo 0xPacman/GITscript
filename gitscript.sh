@@ -6,7 +6,7 @@
 #    By: ahjadani <ahjadani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:09:33 by ahjadani          #+#    #+#              #
-#    Updated: 2022/03/03 10:59:24 by ahjadani         ###   ########.fr        #
+#    Updated: 2022/03/03 17:37:58 by ahjadani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,13 @@ echo "   _____ _____ _______    _____  _____ _____  _____ _____ _______
  | |__| |_| |_   | |     ____) | |____| | \ \ _| |_| |      | |   
   \_____|_____|  |_|    |_____/ \_____|_|  \_\_____|_|      |_|   "
 
-echo "Select the mode: "
-echo "1) Automatic push every N minutes with random commit message"
-echo "2) Normal push with specific commit message"
-echo "3) Push whenever you change something in the code"
+echo ""
+echo "[ 1 ] Automatic push every N minutes with random commit message"
+echo "[ 2 ] Normal push with specific commit message"
+echo "[ 3 ] Push whenever you change something in the code"
 cmsg=$(curl -s http://whatthecommit.com/index.txt)
+
+echo -e $(printf "\e[31m Select an option: \e[0m")
 read n 
 if [ $n -eq 1 ]; then 
     echo "Select the files to track: "
