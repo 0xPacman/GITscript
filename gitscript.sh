@@ -6,7 +6,7 @@
 #    By: ahjadani <ahjadani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:09:33 by ahjadani          #+#    #+#              #
-#    Updated: 2022/03/02 20:13:16 by ahjadani         ###   ########.fr        #
+#    Updated: 2022/03/03 10:59:24 by ahjadani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,23 @@ read n
 if [ $n -eq 1 ]; then 
     echo "Select the files to track: "
     read files
+    check=$(ls $files | wc -l | xargs)
+    if [ $check -eq 0 ]; then
+        echo "error"
+        exit
+    fi
     echo "Push every N minutes:"
     echo -n "N: "
     read nmin
     
     while [ 1 ]
     do
-	    git add $files 
+	    git add $files
+        check=$(ls $files | wc -l | xargs)
+        if [ $check -eq 0 ]; then
+            echo "error"
+            exit
+        fi
 	    git commit -m "$cmsg"
         git push
 	    sleep $nmin
@@ -40,6 +50,11 @@ if [ $n -eq 1 ]; then
 elif [ $n -eq 2 ]; then
     echo "Select the files to track: "
     read files
+    check=$(ls $files | wc -l | xargs)
+    if [ $check -eq 0 ]; then
+        echo "error"
+        exit
+    fi
     while [ 1 ]
     do
         echo "Commit message: "
@@ -51,6 +66,11 @@ elif [ $n -eq 2 ]; then
 elif [ $n -eq 3 ]; then
     echo "Select the files to track: "
     read files
+    check=$(ls $files | wc -l | xargs)
+    if [ $check -eq 0 ]; then
+        echo "error"
+        exit
+    fi
     ls -la -T $files | awk '{print $8}' > .git_script
     while [ 1 ]
     do 
