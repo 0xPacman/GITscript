@@ -6,7 +6,7 @@
 #    By: ahjadani <ahjadani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:09:33 by ahjadani          #+#    #+#              #
-#    Updated: 2022/03/03 17:37:58 by ahjadani         ###   ########.fr        #
+#    Updated: 2022/03/03 17:41:17 by ahjadani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ if [ $n -eq 1 ]; then
     read files
     check=$(ls $files | wc -l | xargs)
     if [ $check -eq 0 ]; then
-        echo "error"
+        echo "Error!"
         exit
     fi
     echo "Push every N minutes:"
@@ -42,7 +42,7 @@ if [ $n -eq 1 ]; then
 	    git add $files
         check=$(ls $files | wc -l | xargs)
         if [ $check -eq 0 ]; then
-            echo "error"
+            echo "Error!"
             exit
         fi
 	    git commit -m "$cmsg"
@@ -54,7 +54,7 @@ elif [ $n -eq 2 ]; then
     read files
     check=$(ls $files | wc -l | xargs)
     if [ $check -eq 0 ]; then
-        echo "error"
+        echo "Error!"
         exit
     fi
     while [ 1 ]
@@ -70,7 +70,7 @@ elif [ $n -eq 3 ]; then
     read files
     check=$(ls $files | wc -l | xargs)
     if [ $check -eq 0 ]; then
-        echo "error"
+        echo "Error!"
         exit
     fi
     ls -la -T $files | awk '{print $8}' > .git_script
@@ -86,5 +86,5 @@ elif [ $n -eq 3 ]; then
         fi
     done
 else
-    echo "Error"
+    echo "Error!"
 fi
