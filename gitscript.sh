@@ -23,7 +23,7 @@ echo "[ 2 ] Normal push with specific commit message"
 echo "[ 3 ] Push whenever you change something in the code"
 cmsg=$(curl -s http://whatthecommit.com/index.txt)
 
-echo -e $(printf "\e[31m Select an option: \e[0m")
+echo $(printf "\e[31m Select an option: \e[0m")
 
 listfile () 
 {
