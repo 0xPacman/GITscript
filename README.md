@@ -5,7 +5,6 @@
 
 "if you want it, GIT it".
 
-
 # GITscript
 
 Usage: 
