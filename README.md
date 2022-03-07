@@ -9,7 +9,7 @@ Usage:
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
 
-there's three options: 
+there's three options in the script: 
 - Automatic push every N seconds with random commit message
 - Normal push with specific commit message (you just need to select files to track and entre the commit message and your code will be pushed)
 - Push whenever you change something in the code (select the files that you want to track, change something in the code and it will be pushed)
