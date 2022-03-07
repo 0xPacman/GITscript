@@ -16,5 +16,5 @@ there's three options:
 
 Features: 
 
-- If you want to see the files that you want to track just type `/list` and a tree of files will show up.
--- If you have any segguestion please request it as a feature (here)[https://github.com/0xPacman/GITscript/issues/new/choose]
+- If you want to see the files that you want to track just type `/list` and a tree of files will show up in order to make things easy for you.
+- If you have any segguestion please request it as a feature [here](https://github.com/0xPacman/GITscript/issues/new/choose)
