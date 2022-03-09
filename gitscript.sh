@@ -73,7 +73,7 @@ read n
 if [ $n -eq 1 ]; then 
     echo "Select the files to track: (type /list to list all files)"
     read files
-    if [ $files = "/list" ]; then
+    if [ "$files" = "/list" ]; then
         listfile
         echo "Select the files to track:"
         read files
@@ -102,7 +102,7 @@ if [ $n -eq 1 ]; then
 elif [ $n -eq 2 ]; then
     echo "Select the files to track: (type /list to list all files)"
     read files
-    if [ $files = "/list" ]; then
+    if [ "$files" = "/list" ]; then
         listfile
         echo "Select the files to track:"
         read files
@@ -124,7 +124,7 @@ elif [ $n -eq 2 ]; then
 elif [ $n -eq 3 ]; then
     echo "Select the files to track: (type /list to list all files)"
     read files
-    if [ $files = "/list" ]; then
+    if [ "$files" = "/list" ]; then
         listfile
         echo "Select the files to track:"
         read files
