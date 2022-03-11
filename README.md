@@ -10,6 +10,8 @@
 ### Prerequisites 
 - Python (v2/v3)
 - Bash (v3)
+- curl (v7)
+- git (v2)
 
 ### Usage: 
 
