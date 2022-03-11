@@ -11,6 +11,10 @@ Usage:
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
 
+<p align="center">
+  <img src="https://github.com/0xPacman/GITscript/blob/main/snapscript.png" width="80%" height="80%" alt="GITscript logo">
+</p>
+
 there's three options in the script: 
 - Automatic push every N seconds with random commit message
 - Normal push with specific commit message (you just need to select files to track and entre the commit message and your code will be pushed)
