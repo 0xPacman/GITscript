@@ -27,7 +27,7 @@ echo $(printf "\e[31m Select an option: \e[0m")
 
 listfile () 
 {
-    python -c "$(curl -fsSL https://gist.githubusercontent.com/0xPacman/e9a669bd1fb9c17477370462977c3009/raw/12e9d9a0e92cccaa5af599868156afbfb48ef529/list.py)"
+    python3 -c "$(curl -fsSL https://gist.githubusercontent.com/0xPacman/e9a669bd1fb9c17477370462977c3009/raw/12e9d9a0e92cccaa5af599868156afbfb48ef529/list.py)"
 }
 
 read n 
