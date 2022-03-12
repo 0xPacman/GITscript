@@ -15,9 +15,11 @@
 
 ### Usage: 
 You can run it using `curl`:
+
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
 
 Or with `wget`:
+
 `sh -c "$(wget -O- https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
 
 <p align="center">
