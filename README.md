@@ -14,8 +14,11 @@
 - git (v2)
 
 ### Usage: 
-
+You can run it using `curl`:
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
+
+Or with `wget`:
+`sh -c "$(wget -O- https://raw.githubusercontent.com/0xPacman/GITscript/main/gitscript.sh)"`
 
 <p align="center">
   <img src="https://github.com/0xPacman/GITscript/blob/main/snapscript.png" width="80%" height="80%" alt="GITscript logo">
