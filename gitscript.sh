@@ -96,13 +96,25 @@ elif [ $n -eq 3 ]; then
         echo "Error!"
         exit
     fi
-    ls -la -T $files | awk '{print $8}' > .git_script
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+    	ls -laT $files | awk '{print $8}' > .git_script
+    else
+    	ls -la --full-time $files | awk '{print $7}' > .git_script
+    fi
     while [ 1 ]
     do 
-        ls -la -T $files | awk '{print $8}' > .git_script_2
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+    		ls -laT $files | awk '{print $8}' > .git_script_2
+    	else
+    		ls -la --full-time $files | awk '{print $7}' > .git_script_2
+    	fi
         diff .git_script .git_script_2
         if [ $? -eq 1 ]; then
-            ls -la -T $files | awk '{print $8}' > .git_script
+            if [[ "$OSTYPE" == "darwin"* ]]; then
+    		ls -laT $files | awk '{print $8}' > .git_script
+    	    else
+    		ls -la --full-time $files | awk '{print $7}' > .git_script
+    	    fi
             git add $files 
 	        git commit -m "$cmsg"
             git push
