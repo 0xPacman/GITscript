@@ -3,7 +3,7 @@
   <img src="https://github.com/0xPacman/GITscript/blob/main/gitscript.png" width="80%" height="80%" alt="GITscript logo">
 </p>
 
-> "if you want it, GIT it".
+>> "if you want it, GIT it".
 
 # GITscript
 
